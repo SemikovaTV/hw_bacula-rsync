@@ -1,1 +1,0 @@
-# hw_bacula-rsync
