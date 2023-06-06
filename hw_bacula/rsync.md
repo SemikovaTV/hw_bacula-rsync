@@ -25,6 +25,11 @@
 *- конфигурационные файлы для bacula-dir, bacula-sd,  bacula-fd,*   
 *- скриншот, подтверждающий успешное прохождение резервного копирования.*
 
+![alt text](https://github.com/SemikovaTV/hw_bacula-rsync/blob/main/1.jpg)
+![alt text](https://github.com/SemikovaTV/hw_bacula-rsync/blob/main/2.jpg)
+![alt text](https://github.com/SemikovaTV/hw_bacula-rsync/blob/main/3.jpg)
+![alt text](https://github.com/SemikovaTV/hw_bacula-rsync/blob/main/4.jpg)
+
 ---
 
 ### Задание 3
@@ -32,3 +37,21 @@
 Установите программное обеспечении Rsync. Настройте синхронизацию на двух нодах. Протестируйте работу сервиса.
 
 *Пришлите рабочую конфигурацию сервера и клиента Rsync блоком кода в вашем md-файле.*
+ 
+ /etc/rsyncd.conf:
+ 
+```pid file = /var/run/rsyncd.pid
+log file = /var/log/rsyncd.log
+transfer logging = true
+munge symlinks = yes
+[data]
+path = /data
+uid = root
+read only = yes
+list = yes
+comment - Data backup dir
+auth users = backup
+secrets file = /etc/rsyncd.scrt
+```
+![alt text](https://github.com/SemikovaTV/hw_bacula-rsync/blob/main/5.jpg)
+
